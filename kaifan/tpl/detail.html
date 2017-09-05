@@ -1,0 +1,21 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="detail container-fluid">
+    <div class="bs-detail">
+        <div class="bs-example">
+            <h4 class="media-heading">{{dish.name}}</h4>
+            <hr />
+            <img class="media-object img-responsive" ng-src="{{'images/'+dish.img_lg}}" alt="{{dish.name}}">
+            <div class="media-body">
+                <p><span class="alert-info">主要原料: </span>{{dish.material}}</p>
+                <p>{{dish.detail}}</p>
+                <span class="red">{{"$"+dish.price}}</span>
+            </div>
+        </div>
+        <div class="detailbtn">
+            <button class="btn btn-warning pull-right" ng-click="jumpToMain()" type="button">我再看看</button>
+            <button class="btn btn-primary pull-right" ng-click="jumpToOrder()" type="button">我下订单</button>
+        </div>
+    </div>
+
+</div>
+<div class="hidden-md hidden-lg hidden-sm" ng-include="'tpl/footer.html'"></div>

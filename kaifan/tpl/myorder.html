@@ -1,0 +1,28 @@
+<div ng-include="'tpl/header.html'"></div>
+
+<div class="myorder bs-example">
+    <h2 class=" text-center">我的订单</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>菜品</th>
+            <th>下单时间</th>
+            <th>联系人</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in phones">
+            <td>{{$index+1}}</td>
+            <td>
+                <img class="img-responsive" ng-src="{{'images/'+p.img_sm}}" alt="">
+            </td>
+            <td>{{p.order_time|date:'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td>{{p.user_name}}</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="hidden-md hidden-lg hidden-sm" ng-include="'tpl/footer.html'"></div>

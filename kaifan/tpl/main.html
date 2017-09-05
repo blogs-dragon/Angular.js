@@ -1,0 +1,31 @@
+<div ng-include="'tpl/header.html'"></div>
+<div class="main container-fluid">
+    <div class="input-group">
+        <input ng-model="kw" type="text" class="form-control" placeholder="请输入菜名/原材料关键字">
+
+    </div><!-- /input-group -->
+    <div class="bs-example" data-example-id="default-media">
+        <div class="media" ng-repeat="m in dishList">
+
+            <div class="media-left media-middle">
+                <a href="#/detail/{{m.did}}">
+                    <img class="media-object" ng-src="{{'images/'+m.img_sm}}" alt="{{m.name}}">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{m.name}}</h4>
+                <p>主要原料:{{m.material}}</p>
+                <span>{{m.price}}</span>
+            </div>
+        </div>
+        <hr>
+        <button ng-if="hasMore" class="btn btn-primary btn-block" ng-disabled="isLoading" ng-click="loadMore()">
+            <span ng-hide="isLoading">加载更多</span>
+            <img ng-show="isLoading" class="loading" src="images/loading.gif" alt="">
+        </button>
+        <div ng-hide="hasMore" class="alert alert-danger">已经没有更多数据可加载了....</div>
+    </div>
+</div>
+
+
+<div class="hidden-md hidden-lg hidden-sm" ng-include="'tpl/footer.html'"></div>
