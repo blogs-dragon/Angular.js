@@ -20,7 +20,7 @@ main.html需要调用：
 --dish_listbykw.php		 根据菜品名称/原料查询
 
 detail.html需要调用：
-  
+
 --dish_listbydid.php		 根据编号列出某一道菜的详情
 
 order.html需要调用：
